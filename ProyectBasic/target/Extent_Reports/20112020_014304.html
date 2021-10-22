@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+ExtentReports Librería 2.41.0 | http://relevantcodes.com/extentreports-for-selenium/ | https://github.com/anshooarora/
+Copyright (c) 2015, Anshoo Arora (Relevant Codes) | Derechos de autor bajo la nueva licencia BSD | http://opensource.org/licenses/BSD-3-Clause
+Documentación: http://extentreports.relevantcodes.com 
+-->
+
+<meta charset='UTF-8' /> 
+<meta name='description' content='ExtentReports (by Anshoo Arora) es una librería para el reporte de tests automatizados realizada en .NET y Java. Podrás crear detallados y bonitos informes HTML para los navegadores más modernos. ExtentReports muestra los tests y los pasos en un dashboard realizado especialmente para un análisis simple y rápido de los resultados de las pruebas.' />
+<meta name='robots' content='noodp, noydir' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<meta name='extentx' id='extentx' content='' />
+
+<title>
+Cucumber Extent Reports - v1.1.1
+</title>
+
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+<link href='https://cdn.rawgit.com/anshooarora/extentreports/97fc3fe7f55cba86a4f5b6ff9a2bb80de3e4867c/cdn/extent.css' type='text/css' rel='stylesheet' />
+
+<style>
+
+            
+                
+            
+        
+</style>
+</head>
+
+
+<body class='extent standard hide-overflow'>
+<!-- nav -->
+<nav>
+<div class='logo-container'>
+<a class='logo-content' href='http://extentreports.relevantcodes.com'>
+<span>ExtentReports</span>
+</a>
+<a href='#' data-activates='slide-out' class='button-collapse hide-on-large-only'><i class='mdi-navigation-apps'></i></a>
+</div>
+<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+<li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='mdi-action-dashboard'></i>Detalles de tests</a></li>
+<li class='analysis waves-effect'><a href='#!' class='categories-view' onclick="_updateCurrentStage(1)"><i class='mdi-maps-local-offer'></i>Categorías</a></li>
+<li class='analysis waves-effect'><a href='#!' class='exceptions-view' onclick="_updateCurrentStage(2)"><i class='mdi-action-bug-report'></i>Exceptions</a></li>
+<li class='analysis waves-effect'><a href='#!' class='dashboard-view'><i class='mdi-action-track-changes'></i></i>Análisis</a></li>
+</ul>
+<span class='report-name'>Way2Automation-Cucumber-Report</span> <span class='report-headline'> - v1.1.1</span>
+<ul class='right hide-on-med-and-down nav-right'>
+<li class='theme-selector' alt='Haga clic para cambiar al tema oscuro. Para habilitar de forma predeterminada, utilice la configuración js. $("body").addClass("dark");' title='Haga clic para cambiar al tema oscuro. Para habilitar de forma predeterminada, utilice la configuración js. $("body").addClass("dark");'>
+<i class='mdi-hardware-desktop-windows'></i>
+</li>
+<li>
+<span class='suite-started-time'>2020-11-20 13:43:23</span>
+</li>
+<li>
+<span>v2.41.0</span>
+</li>
+</ul>
+</nav>
+<!-- /nav -->
+
+<!-- container -->
+<div class='container'>
+
+<!-- dashboard -->
+<div id='dashboard-view' class='row'>
+<div class='time-totals'>
+<div class='col l2 m4 s6'>
+<div class='card suite-total-tests'> 
+<span class='panel-name'>Tests totales</span> 
+<span class='total-tests'> <span class='panel-lead'></span> </span> 
+</div> 
+</div>
+<div class='col l2 m4 s6'>
+<div class='card suite-total-steps'> 
+<span class='panel-name'>Pasos totales</span> 
+<span class='total-steps'> <span class='panel-lead'></span> </span> 
+</div> 
+</div>
+<div class='col l2 m4 s12'>
+<div class='card suite-total-time-current'> 
+<span class='panel-name'>Tiempo total insumido (Current Run)</span> 
+<span class='suite-total-time-current-value panel-lead'>0h 0m 18s+788ms</span> 
+</div> 
+</div>
+<div class='col l2 m4 s12'>
+<div class='card suite-total-time-overall'> 
+<span class='panel-name'>Tiempo total insumido (Overall)</span> 
+<span class='suite-total-time-overall-value panel-lead'>0h 0m 18s+788ms</span> 
+</div> 
+</div>
+<div class='col l2 m4 s6 suite-start-time'>
+<div class='card accent green-accent'> 
+<span class='panel-name'>Comienzo</span> 
+<span class='panel-lead suite-started-time'>2020-11-20 13:43:04</span> 
+</div> 
+</div>
+<div class='col l2 m4 s6 suite-end-time'>
+<div class='card accent pink-accent'> 
+<span class='panel-name'>Fin</span> 
+<span class='panel-lead suite-ended-time'>2020-11-20 13:43:23</span> 
+</div> 
+</div>
+</div>
+<div class='charts'>
+<div class='col s12 m6 l4 fh'> 
+<div class='card-panel'> 
+<div>
+<span class='panel-name'>Resultados de test</span>
+</div> 
+<div class='panel-setting modal-trigger test-count-setting right'>
+<a href='#test-count-setting'><i class='mdi-navigation-more-vert text-md'></i></a>
+</div> 
+<div class='chart-box'>
+<canvas class='text-centered' id='test-analysis'></canvas>
+</div> 
+<div>
+<span class='weight-light'><span class='t-pass-count weight-normal'></span> Test(s) correcto</span>
+</div> 
+<div>
+<span class='weight-light'><span class='t-fail-count weight-normal'></span> Test(s) fallado, <span class='t-others-count weight-normal'></span> otro(s)</span>
+</div> 
+</div> 
+</div> 
+<div class='col s12 m6 l4 fh'> 
+<div class='card-panel'> 
+<div>
+<span class='panel-name'>Resultados de pasos</span>
+</div> 
+<div class='panel-setting modal-trigger step-status-filter right'>
+<a href='#step-status-filter'><i class='mdi-navigation-more-vert text-md'></i></a>
+</div> 
+<div class='chart-box'>
+<canvas class='text-centered' id='step-analysis'></canvas>
+</div> 
+<div>
+<span class='weight-light'><span class='s-pass-count weight-normal'></span> paso(s) correcto</span>
+</div> 
+<div>
+<span class='weight-light'><span class='s-fail-count weight-normal'></span> paso(s) fallado, <span class='s-others-count weight-normal'></span> otro(s)</span>
+</div> 
+</div> 
+</div>
+<div class='col s12 m12 l4 fh'> 
+<div class='card-panel'> 
+<span class='panel-name'>Porcentaje de test correctos</span> 
+<span class='pass-percentage panel-lead'></span> 
+<div class='progress light-blue lighten-3'> 
+<div class='determinate light-blue'></div> 
+</div> 
+</div> 
+</div>
+</div>
+<div class='system-view'>
+<div class='col l4 m12 s12'>
+<div class='card-panel'>
+<span class='label info outline right'>Ambiente</span>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Name</td>
+<td>manue</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Windows 10</td>
+</tr>
+<tr>
+<td>Java Version</td>
+<td>1.8.0_241</td>
+</tr>
+<tr>
+<td>Host Name</td>
+<td>LAPTOP-UCE2Q720</td>
+</tr>
+<tr>
+<td>Cucumber version</td>
+<td>v1.2.5</td>
+</tr>
+<tr>
+<td>Extent Cucumber Report version</td>
+<td>v1.1.1</td>
+</tr>
+<tr>
+<td>Browser Name</td>
+<td>ChromeDriver</td>
+</tr>
+<tr>
+<td>Browser Version</td>
+<td>v2.40.565498</td>
+</tr>
+<tr>
+<td>Selenium Version</td>
+<td>v3.141.59</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class='category-summary-view'>
+<div class='col l4 m6 s12'>
+<div class='card-panel'>
+<span class='label info outline right'>Categories</span>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+@Busqueda-cars
+</td>
+</tr>
+<tr>
+<td>
+@Busqueda-cars-positive
+</td>
+</tr>
+<tr>
+<td>
+@usando-Busqueda-cars
+</td>
+</tr>
+<tr>
+<td>
+@usuando-Busqueda-cars-positive
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- /dashboard -->
+
+<!-- tests -->
+<div id='test-view' class='row _addedTable'>
+<div class='col _addedCell1'>
+<div class='contents'>
+<div class='card-panel heading'>
+<h5>Tests</h5>
+</div>
+<div class='card-panel filters'>
+<div>
+<a data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#' class='dropdown-button button tests-toggle'><i class='mdi-action-subject icon'></i></a>
+<ul id='tests-toggle' class='dropdown-content'>
+<li class='pass'><a href='#!'>Pass</a></li>
+<li class='fail'><a href='#!'>Fail</a></li>
+<li class='skip'><a href='#!'>Skip</a></li>
+<li class='divider'></li>
+<li class='clear'><a href='#!'>Borrar filtro</a></li>
+</ul>
+</div>
+<div>
+<a data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#' class='category-toggle dropdown-button button'><i class='mdi-maps-local-offer icon'></i></a>
+<ul id='category-toggle' class='dropdown-content'>
+<li class='@Busqueda-cars'><a href='#!'>@Busqueda-cars</a></li>
+<li class='@Busqueda-cars-positive'><a href='#!'>@Busqueda-cars-positive</a></li>
+<li class='@usando-Busqueda-cars'><a href='#!'>@usando-Busqueda-cars</a></li>
+<li class='@usuando-Busqueda-cars-positive'><a href='#!'>@usuando-Busqueda-cars-positive</a></li>
+<li class='divider'></li>
+<li class='clear'><a href='#!'>Borrar filtro</a></li>
+</ul>
+</div>
+<div>
+<a id='clear-filters' alt='Borrar filtro' title='Borrar filtro'><i class='mdi-navigation-close icon'></i></a>
+</div>
+<div>&nbsp;&middot;&nbsp;</div>
+<div>
+<a id='enableDashboard' alt='Activar Dashboard' title='Activar Dashboard'><i class='mdi-action-track-changes icon'></i></a>
+</div>
+<div>
+<a id='refreshCharts' alt='Refrescar gráficos con filtro' title='Refrescar gráficos con filtro' class='enabled'><i class='mdi-navigation-refresh icon'></i></i></a>
+</div>
+<div>&nbsp;&middot;</div>
+<div class='search' alt='Buscar test(s)' title='Buscar test(s)'>
+<div class='input-field left'>
+<input id='searchTests' type='text' class='validate' placeholder='Buscar test(s)...'>
+</div>
+<i class='mdi-action-search icon'></i>
+</div>
+</div>
+<div class='card-panel no-padding-h no-padding-v no-margin-v'>
+<div class='wrapper'>
+<ul id='test-collection' class='test-collection'>
+<li class='collection-item test displayed active fail hasChildren' extentid='c26a4e4c-ab97-4b3a-ab41-678db04bcd2d'>
+<div class='test-head'>
+<span class='test-name'>Feature: validamos la pagina de cars de busqueda </span>
+<span class='test-status label right outline capitalize fail'>fail</span>
+<span class='category-assigned hide  @busqueda-cars @busqueda-cars-positive'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Comienzo del test' alt='Comienzo del test' class='test-started-time label green lighten-1 text-white'>2020-11-20 13:43:04</span>
+<span title='Fin de test' alt='Fin de test' class='test-ended-time label red lighten-1 text-white'>2020-11-20 13:43:23</span>
+<span title='Tiempo de ejecución' alt='Tiempo de ejecución' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 18s+271ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@Busqueda-cars</span>
+<span class='category text-white'>@Busqueda-cars-positive</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Resultado</th>
+<th>Hora</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed fail node-1x'>
+<div class='collapsible-header test-node fail'>
+<div class='right test-info'>
+<span title='Comienzo del test' alt='Comienzo del test' class='test-started-time label green lighten-2 text-white'>2020-11-20 13:43:04</span>
+<span title='Fin de test' alt='Fin de test' class='test-ended-time label red lighten-2 text-white'>2020-11-20 13:43:23</span>
+<span title='Tiempo de ejecución' alt='Tiempo de ejecución' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 18s+225ms</span>
+<span class='test-status label outline capitalize fail'>fail</span>
+</div>
+<div class='test-node-name'>Scenario: buscamos para el nuevo automavil</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Resultado</th>
+<th>Hora</th>
+<th>StepName</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>13:43:18</td>
+<td class='step-name'>Given Estamos en la pagina "http://www.carsguide.com.au" del sitio web CARSGUIDE</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>13:43:18</td>
+<td class='step-name'>When Nos movemos por el menu</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>13:43:21</td>
+<td class='step-name'>And hacemos click a "Search Cars"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>13:43:21</td>
+<td class='step-name'>Then verificamos que estemos en la pagina SerchCars</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>13:43:21</td>
+<td class='step-name'>And Y seleccionamos Any Make por "BMW"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Volvemos a selecionar Select Model por "1 Series M"</td>
+<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with value: 1 Series M
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-UCE2Q720', ip: '192.168.0.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: SeleniumDriver
+	at org.openqa.selenium.support.ui.Select.findOptionsByValue(Select.java:283)
+	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:186)
+	at util.SeleniumDriver.selectValue(SeleniumDriver.java:106)
+	at page.actions.SearchPageActions.selectModels(SearchPageActions.java:25)
+	at steps.Search_Cars.volvemos_a_selecionar_Select_Model_por(Search_Cars.java:58)
+	at ?.And Volvemos a selecionar Select Model por "1 Series M"(SearchCars.feature:15)
+</pre></td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Seleccionamos Any Location as "ACT - All"</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Selecionamos Price por "$1,000"</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Hacemos click a Find_My_Next_Cars</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>Then Deberia ver la lista de los coches buscados</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And la pagina deberia aparecer "Bmw 1 Series M Under 1000 for Sale ACT | carsguide"</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active fail hasChildren' extentid='850b9a79-23d1-4d5a-88cb-3783827811e6'>
+<div class='test-head'>
+<span class='test-name'>Feature: validamos la pagina de cars de busqueda </span>
+<span class='test-status label right outline capitalize fail'>fail</span>
+<span class='category-assigned hide  @usando-busqueda-cars @usuando-busqueda-cars-positive'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Comienzo del test' alt='Comienzo del test' class='test-started-time label green lighten-1 text-white'>2020-11-20 13:43:23</span>
+<span title='Fin de test' alt='Fin de test' class='test-ended-time label red lighten-1 text-white'>2020-11-20 13:43:23</span>
+<span title='Tiempo de ejecución' alt='Tiempo de ejecución' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+20ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@usando-Busqueda-cars</span>
+<span class='category text-white'>@usuando-Busqueda-cars-positive</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Resultado</th>
+<th>Hora</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed fail node-1x'>
+<div class='collapsible-header test-node fail'>
+<div class='right test-info'>
+<span title='Comienzo del test' alt='Comienzo del test' class='test-started-time label green lighten-2 text-white'>2020-11-20 13:43:23</span>
+<span title='Fin de test' alt='Fin de test' class='test-ended-time label red lighten-2 text-white'>2020-11-20 13:43:23</span>
+<span title='Tiempo de ejecución' alt='Tiempo de ejecución' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 0s+18ms</span>
+<span class='test-status label outline capitalize fail'>fail</span>
+</div>
+<div class='test-node-name'>Scenario: usando busqueda para el nuevo automavil</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Resultado</th>
+<th>Hora</th>
+<th>StepName</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>Given Estamos en la pagina "http://www.carsguide.com.au" del sitio web CARSGUIDE</td>
+<td class='step-details'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=86.0.4240.198)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-UCE2Q720', ip: '192.168.0.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\manue\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 86.0.4240.198, webStorageEnabled: true}
+Session ID: 20b2152e1f20071ba59f7a0140babb89
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at util.SeleniumDriver.openPage(SeleniumDriver.java:40)
+	at steps.Search_Cars.estamos_en_la_pagina_del_sitio_web_CARSGUIDE(Search_Cars.java:29)
+	at ?.Given Estamos en la pagina "http://www.carsguide.com.au" del sitio web CARSGUIDE(UsedSearchCars.feature:8)
+</pre></td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>When Nos movemos por el menu</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And hacemos click a "Used" para el menu used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>Then verificamos que estemos en la pagina "Used Cars For Sale" used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Y seleccionamos Any Make por "Audi" used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And select car model used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Seleccionamos Any Location as "ACT - All" used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Selecionamos Price por "$10,000" used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And Hacemos click a Find_My_Next_Cars used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>13:43:23</td>
+<td class='step-name'>And pagina deberia aparecer "Used Audi A4 Under 10000 for Sale ACT | carsguide" used</td>
+<td class='step-details'>SKIPPED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='test-details-wrapper' class='col _addedCell2'>
+<div class='contents'>
+<div class='card-panel details-view'>
+<h5 class='details-name'></h5>
+<div class='step-filters right'>
+<span class='info' alt='info' title='info'><i class='mdi-action-info-outline'></i></span>
+<span class='pass' alt='pass' title='pass'><i class='mdi-action-check-circle'></i></span>
+<span class='fail' alt='fail' title='fail'><i class='mdi-navigation-cancel'></i></span>
+<span class='fatal' alt='fatal' title='fatal'><i class='mdi-navigation-cancel'></i></span>
+<span class='error' alt='error' title='error'><i class='mdi-alert-error'></i></span>
+<span class='warning' alt='warning' title='warning'><i class='mdi-alert-warning'></i></span>
+<span class='skip' alt='skip' title='skip'><i class='mdi-content-redo'></i></span>
+<span class='clear-step-filter' alt='Clear filters' title='Clear filters'><i class='mdi-content-clear'></i></span>
+</div>
+<div class='details-container'>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- /tests -->
+
+<!-- categories -->
+<div id='categories-view' class='row _addedTable hide'>
+<div class='col _addedCell1'>
+<div class='contents'>
+<div class='card-panel heading'>
+<h5>Categories</h5>
+</div>
+<div class='card-panel filters'>
+<div class='search' alt='Search tests' title='Search tests'>
+<div class='input-field left'>
+<input id='searchTests' type='text' class='validate' placeholder='Search tests...'>
+</div>
+<i class='mdi-action-search icon'></i>
+</div>
+</div>
+<div class='card-panel no-padding-h no-padding-v'>
+<div class='wrapper'>
+<ul id='cat-collection' class='cat-collection'>
+<li class='category-item displayed'>
+<div class='cat-head'>
+<span class='category-name'>@Busqueda-cars</span>
+</div>
+<div class='category-status-counts'>
+<span class='fail label dot'>Fail: 1</span>
+</div>
+<div class='cat-body'>
+<div class='category-status-counts'>
+<div class='button-group'>
+<a href='#!' class='pass label filter'>Pass <span class='icon'>0</span></a>
+<a href='#!' class='fail label filter'>Fail <span class='icon'>1</span></a>
+<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+</div>
+</div>
+<div class='cat-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>Fecha de ejecución</th>
+<th>Nombre del test</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class='fail'>
+<td>2020-11-20 13:43:04</td>
+<td><span class='category-link linked' extentid='c26a4e4c-ab97-4b3a-ab41-678db04bcd2d'>Feature: validamos la pagina de cars de busqueda</span></td>
+<td><div class='status label capitalize fail'>fail</div></td>
+</tr>
+<tbody>
+</table>
+</div>
+</div> 
+</li>
+<li class='category-item displayed'>
+<div class='cat-head'>
+<span class='category-name'>@Busqueda-cars-positive</span>
+</div>
+<div class='category-status-counts'>
+<span class='fail label dot'>Fail: 2</span>
+</div>
+<div class='cat-body'>
+<div class='category-status-counts'>
+<div class='button-group'>
+<a href='#!' class='pass label filter'>Pass <span class='icon'>0</span></a>
+<a href='#!' class='fail label filter'>Fail <span class='icon'>2</span></a>
+<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+</div>
+</div>
+<div class='cat-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>Fecha de ejecución</th>
+<th>Nombre del test</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class='fail'>
+<td>2020-11-20 13:43:04</td>
+<td><span class='category-link linked' extentid='ad7cb3b6-766d-40ad-9b5f-0bcc5f1127d2'>Scenario: buscamos para el nuevo automavil</span></td>
+<td><div class='status label capitalize fail'>fail</div></td>
+</tr>
+<tr class='fail'>
+<td>2020-11-20 13:43:04</td>
+<td><span class='category-link linked' extentid='c26a4e4c-ab97-4b3a-ab41-678db04bcd2d'>Feature: validamos la pagina de cars de busqueda</span></td>
+<td><div class='status label capitalize fail'>fail</div></td>
+</tr>
+<tbody>
+</table>
+</div>
+</div> 
+</li>
+<li class='category-item displayed'>
+<div class='cat-head'>
+<span class='category-name'>@usando-Busqueda-cars</span>
+</div>
+<div class='category-status-counts'>
+<span class='fail label dot'>Fail: 1</span>
+</div>
+<div class='cat-body'>
+<div class='category-status-counts'>
+<div class='button-group'>
+<a href='#!' class='pass label filter'>Pass <span class='icon'>0</span></a>
+<a href='#!' class='fail label filter'>Fail <span class='icon'>1</span></a>
+<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+</div>
+</div>
+<div class='cat-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>Fecha de ejecución</th>
+<th>Nombre del test</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class='fail'>
+<td>2020-11-20 13:43:23</td>
+<td><span class='category-link linked' extentid='850b9a79-23d1-4d5a-88cb-3783827811e6'>Feature: validamos la pagina de cars de busqueda</span></td>
+<td><div class='status label capitalize fail'>fail</div></td>
+</tr>
+<tbody>
+</table>
+</div>
+</div> 
+</li>
+<li class='category-item displayed'>
+<div class='cat-head'>
+<span class='category-name'>@usuando-Busqueda-cars-positive</span>
+</div>
+<div class='category-status-counts'>
+<span class='fail label dot'>Fail: 2</span>
+</div>
+<div class='cat-body'>
+<div class='category-status-counts'>
+<div class='button-group'>
+<a href='#!' class='pass label filter'>Pass <span class='icon'>0</span></a>
+<a href='#!' class='fail label filter'>Fail <span class='icon'>2</span></a>
+<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+</div>
+</div>
+<div class='cat-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>Fecha de ejecución</th>
+<th>Nombre del test</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class='fail'>
+<td>2020-11-20 13:43:23</td>
+<td><span class='category-link linked' extentid='07f1708b-0331-4e81-833a-54bd8ac89a0a'>Scenario: usando busqueda para el nuevo automavil</span></td>
+<td><div class='status label capitalize fail'>fail</div></td>
+</tr>
+<tr class='fail'>
+<td>2020-11-20 13:43:23</td>
+<td><span class='category-link linked' extentid='850b9a79-23d1-4d5a-88cb-3783827811e6'>Feature: validamos la pagina de cars de busqueda</span></td>
+<td><div class='status label capitalize fail'>fail</div></td>
+</tr>
+<tbody>
+</table>
+</div>
+</div> 
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='cat-details-wrapper' class='col _addedCell2'>
+<div class='contents'>
+<div class='card-panel details-view'>
+<h5 class='cat-name'></h5>
+<div class='cat-container'>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- /categories -->
+
+<!-- exceptions -->
+<div id='exceptions-view' class='row _addedTable hide'>
+<div class='col _addedCell1'>
+<div class='contents'>
+<div class='card-panel heading'>
+<h5>Defects</h5>
+</div>
+<div class='card-panel filters'>
+<div class='search' alt='Search tests' title='Search tests'>
+<div class='input-field left'>
+<input id='searchTests' type='text' class='validate' placeholder='Search tests...'>
+</div>
+<i class='mdi-action-search icon'></i>
+</div>
+</div>
+<div class='card-panel no-padding-h no-padding-v'>
+<div class='wrapper'>
+<ul id='exception-collection' class='exception-collection'>
+<li class='exception-item displayed'>
+<div class='exception-head'>
+<span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+</div>
+<div class='exception-test-count'>
+<span class='fail label'>1</span>
+</div>
+<div class='exception-body'>
+<div class='exception-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>RunDate</th>
+<th>Test Name</th>
+<th>Exception</th>
+</tr>
+</thead>
+<tbody>
+<tr class='fail'>
+<td>2020-11-20 13:43:04</td>
+<td><span class='exception-link linked' extentid='ad7cb3b6-766d-40ad-9b5f-0bcc5f1127d2'>Scenario: buscamos para el nuevo automavil</span></td>
+<td><pre class='exception-message'>org.openqa.selenium.NoSuchElementException: Cannot locate option with value: 1 Series M
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-UCE2Q720', ip: '192.168.0.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: driver.version: SeleniumDriver
+	at org.openqa.selenium.support.ui.Select.findOptionsByValue(Select.java:283)
+	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:186)
+	at util.SeleniumDriver.selectValue(SeleniumDriver.java:106)
+	at page.actions.SearchPageActions.selectModels(SearchPageActions.java:25)
+	at steps.Search_Cars.volvemos_a_selecionar_Select_Model_por(Search_Cars.java:58)
+	at ?.And Volvemos a selecionar Select Model por "1 Series M"(SearchCars.feature:15)
+</pre></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div> 
+</li>
+<li class='exception-item displayed'>
+<div class='exception-head'>
+<span class='exception-name'>org.openqa.selenium.NoSuchWindowException</span>
+</div>
+<div class='exception-test-count'>
+<span class='fail label'>1</span>
+</div>
+<div class='exception-body'>
+<div class='exception-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>RunDate</th>
+<th>Test Name</th>
+<th>Exception</th>
+</tr>
+</thead>
+<tbody>
+<tr class='fail'>
+<td>2020-11-20 13:43:23</td>
+<td><span class='exception-link linked' extentid='07f1708b-0331-4e81-833a-54bd8ac89a0a'>Scenario: usando busqueda para el nuevo automavil</span></td>
+<td><pre class='exception-message'>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=86.0.4240.198)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.18363 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-UCE2Q720', ip: '192.168.0.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\manue\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 86.0.4240.198, webStorageEnabled: true}
+Session ID: 20b2152e1f20071ba59f7a0140babb89
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at util.SeleniumDriver.openPage(SeleniumDriver.java:40)
+	at steps.Search_Cars.estamos_en_la_pagina_del_sitio_web_CARSGUIDE(Search_Cars.java:29)
+	at ?.Given Estamos en la pagina "http://www.carsguide.com.au" del sitio web CARSGUIDE(UsedSearchCars.feature:8)
+</pre></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div> 
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='exception-details-wrapper' class='col _addedCell2'>
+<div class='contents'>
+<div class='card-panel details-view'>
+<h5 class='exception-name'></h5>
+<div class='exception-container'>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- /exceptions -->
+
+<!-- testrunner logs -->
+<!-- /testrunner logs -->
+
+</div>
+<!-- /container -->
+
+<!-- test dashboard counts setting -->
+<div id='test-count-setting' class='modal bottom-sheet'> 
+<div class='modal-content'> 
+<h5>Configurar el tipo de vista</h5> 
+<input name='test-count-setting' type='radio' id='parentWithoutNodes' class='with-gap'> 
+<label for='parentWithoutNodes'>Solo test padres</label> 
+<br> 
+<input name='test-count-setting' type='radio' id='parentWithoutNodesAndNodes' class='with-gap'> 
+<label for='parentWithoutNodesAndNodes'>Test padres y test hijos</label> 
+<br> 
+<input name='test-count-setting' type='radio' id='childNodes' class='with-gap'> 
+<label for='childNodes'>�?nicamente test hijos</label> 
+</div> 
+<div class='modal-footer'> 
+<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Guardar</a> 
+</div> 
+</div>
+<!-- /test dashboard counts setting -->
+
+<!-- filter for step status -->
+<div id='step-status-filter' class='modal bottom-sheet'> 
+<div class='modal-content'> 
+<h5>Seleccionar resultado</h5> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-pass'> 
+<label for='step-dashboard-filter-pass'>Pass</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fail'> 
+<label for='step-dashboard-filter-fail'>Fail</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fatal'> 
+<label for='step-dashboard-filter-fatal'>Fatal</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-error'> 
+<label for='step-dashboard-filter-error'>Error</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-warning'> 
+<label for='step-dashboard-filter-warning'>Warning</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-skip'> 
+<label for='step-dashboard-filter-skip'>Skipped</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-info'> 
+<label for='step-dashboard-filter-info'>Info</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-unknown'> 
+<label for='step-dashboard-filter-unknown'>Unknown</label> 
+</div>
+<div class='modal-footer'> 
+<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Guardar</a> 
+</div> 
+</div>
+<!-- /filter for step status -->
+
+<script src='https://cdn.rawgit.com/anshooarora/extentreports/051be9b627c84bde3591f7e6268e8b70e334a760/cdn/extent.js' type='text/javascript'></script>
+
+<script>$(document).ready(function() { $('.logo span').html('ExtentReports'); });</script>
+<script>
+
+            
+                $(document).ready(function() {
+                    
+                });
+            
+        
+</script>
+</body>
+</html>

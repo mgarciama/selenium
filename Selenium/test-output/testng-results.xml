@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="32018" started-at="2019-11-02T18:21:51Z" finished-at="2019-11-02T18:22:23Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="32018" started-at="2019-11-02T18:21:51Z" finished-at="2019-11-02T18:22:23Z">
+      <class name="test.Pruebas">
+        <test-method status="PASS" signature="setUpTest()[pri:0, instance:test.Pruebas@3bfdc050]" name="setUpTest" is-config="true" duration-ms="7739" started-at="2019-11-02T19:21:51Z" finished-at="2019-11-02T19:21:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="AlertsConfirmar()[pri:2, instance:test.Pruebas@3bfdc050]" name="AlertsConfirmar" duration-ms="24181" started-at="2019-11-02T19:21:59Z" description="Confirmar Alertas" finished-at="2019-11-02T19:22:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AlertsConfirmar -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:test.Pruebas@3bfdc050]" name="tearDown" is-config="true" duration-ms="82" started-at="2019-11-02T19:22:23Z" finished-at="2019-11-02T19:22:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AlertsConfirmar status=SUCCESS method=Pruebas.AlertsConfirmar()[pri:2, instance:test.Pruebas@3bfdc050] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.Pruebas -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
