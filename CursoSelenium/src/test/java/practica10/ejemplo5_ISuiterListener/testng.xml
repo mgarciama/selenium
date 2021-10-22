@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "TESTNG ejemplo de Suite Listener"><!-- creamos la suite de ejecución -->
+	<listeners>
+		<!-- <listener class-name ="practica10.ejemplo5_ISuiterListener.ISuiterListener"></listener>-->
+	<listener class-name ="practica10.ejemplo6_ITestListener.TestListeners"></listener>
+	</listeners>
+
+	<test name ="Test">
+		<classes>
+			<class name = "practica10.ejemplo5_ISuiterListener.SalesforceTest"></class>
+			<!-- <class name = "practica10.ejemplo5_ISuiterListener.NetflixText"></class> -->
+			
+		</classes>
+	</test>
+</suite>

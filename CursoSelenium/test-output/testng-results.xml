@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="12594" started-at="2021-05-05T18:47:37 CEST" finished-at="2021-05-05T18:47:49 CEST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="12594" started-at="2021-05-05T18:47:37 CEST" finished-at="2021-05-05T18:47:49 CEST">
+      <class name="carsGuide.Test.LoginTest">
+        <test-method status="PASS" signature="loadData()[pri:0, instance:carsGuide.Test.LoginTest@e320068]" name="loadData" is-config="true" duration-ms="17" started-at="2021-05-05T18:47:37 CEST" finished-at="2021-05-05T18:47:37 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadData -->
+        <test-method status="PASS" signature="setUpTest(org.testng.ITestContext)[pri:0, instance:carsGuide.Test.LoginTest@e320068]" name="setUpTest" is-config="true" duration-ms="4619" started-at="2021-05-05T18:47:37 CEST" finished-at="2021-05-05T18:47:41 CEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@34f22f9d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="IniciarSession()[pri:1, instance:carsGuide.Test.LoginTest@e320068]" name="IniciarSession" duration-ms="4757" started-at="2021-05-05T18:47:41 CEST" description="IniciarSession" finished-at="2021-05-05T18:47:46 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IniciarSession -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:carsGuide.Test.LoginTest@e320068]" name="tearDown" is-config="true" duration-ms="3163" started-at="2021-05-05T18:47:46 CEST" finished-at="2021-05-05T18:47:49 CEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=IniciarSession status=SUCCESS method=LoginTest.IniciarSession()[pri:1, instance:carsGuide.Test.LoginTest@e320068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- carsGuide.Test.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
